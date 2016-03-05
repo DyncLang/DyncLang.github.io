@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>浪里小白龙</title>
+  <subtitle>不为繁华易匠心</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-03-05T09:17:41.772Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>lang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>搭建Hexo个人博客</title>
+    <link href="http://yoursite.com/2016/03/05/%E6%90%AD%E5%BB%BAHexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/2016/03/05/搭建Hexo个人博客/</id>
+    <published>2016-03-05T02:38:50.000Z</published>
+    <updated>2016-03-05T09:17:41.772Z</updated>
+    
+    <content type="html">&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;title: Test Bolog ／／博客名称&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;// 博客时间，Hexo主要是通过时间来管理博客&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;date: 2016-03-05 10:38:50　&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//你的博客类别 可以在导航栏的类别看到&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;categories: blog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//这里可以在标签里面看到&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tags: 博客&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;embed src=&quot;http://www.xiami.com/widget/0_3515679/singlePlayer.swf&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;257&quot; height=&quot;33&quot; wmode=&quot;transparent&quot;&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2015年终总结</title>
+    <link href="http://yoursite.com/2016/01/05/2015%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2016/01/05/2015总结/</id>
+    <published>2016-01-04T16:00:01.000Z</published>
+    <updated>2016-03-05T09:17:56.802Z</updated>
+    
+    <content type="html">&lt;p&gt;今年我结束了我的大三生活，也慢慢的在为准备踏入社会做准备，整个暑假都是处于长期的备战状态，让自己能够有一个良好的开始而努力着，其实可能就是希望自己能够有一份满意的工作，不要让自己对自己失望，在这一刻我想我还是没有做到，总结下来我失望了，没有达到自己想要的高度，一步步的蹒跚一步步的在挑战自己以前没有做过的事情，得到的是把自己的缺点暴露得像阳光一样，“因为，有光的地方一定有影子”。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这一年&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;伴随大学两年”盘县大学生联谊会“，十周年一路开始到结束也对自己做了一次完整的告别。带着一路的左膀右臂疯狂的奔跑着。&lt;/li&gt;
+&lt;li&gt;完成南昌随处可见的旅游，虽然不像地头蛇一样，至少让自己对南昌这座城市有了更多的了解。&lt;br&gt;做回真正的大学生，想玩就学，想学就玩的心态走完大三，虽然生活获得比较拮据，我想我尝到了读大学的快乐。&lt;/li&gt;
+&lt;li&gt;暑假决定继续走了编程路，踏上一个疯狂的历程（收获颇多）&lt;br&gt;开始了第一份工作，自己很满意，当然也充满了挑战。（Android开发工程师）暂为本专业最高工资就业者。&lt;/li&gt;
+&lt;li&gt;最后决定申请一个域名（www.xblvip.cn)&lt;/li&gt;
+&lt;li&gt;走过，广州，贵阳，南昌，上海，南京，江苏，留下自己特定的记忆。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;一路的陪伴&lt;/strong&gt;&lt;br&gt;不知道从何时起，自己突然开始有了一份牵挂，有时候你不得不相信幸运有时对你的光顾，有些时候自己甚至不敢提起，也不敢去面对，觉得自己总是那么的唐突，像是一个穿着“皇帝盛装”的人，不敢去提起，真像是一层窗户纸一样，害怕提前捅破，变得紧闭门窗。我承认我真是的胆小。&lt;br&gt;有时候你会不自然的想起，聊着那些自己有时候都觉得乱七八糟的问题，但特有觉得有意思，兴趣又特浓。昨晚听到一句特别走心的话&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;什么是溶为一体，是你正常时近乎忘记了他的存在，当你生病时候突然想起了他。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;我想确实是这样吧！最害怕的是一个习惯，习惯得有时候关心不是从口里说出来，而是更近忽的自我感受，你不需要去感谢，你更想做的事珍惜，也许是彼此都明白吧，有时候说出来比就这样的距离更好，彼此更容易得到一份开心和陪伴，提前把适距离之外拉到和自己同心，也许会弹得更远。我认为这应该就是分寸吧。这种忽远忽近的徘徊感更容易获得自己想要的幸福吗？就像突如其来的一份惊喜，顿时然自己变得自顾不暇。2016不在如此下去，给彼此一个交代，让彼此能够有终有果，我想会一直走下去，因为这是缘分靠自己最近的时候，“你若与我携手，我便为你停下脚步，知道你和我一起，继续向前”。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;年末&lt;/strong&gt;&lt;br&gt;我没有和去年一样，吃着饺子或者汤圆等着明年的到来，和往常一样做着和昨天一样的事情，我想这一切并没有什么特别，只不过通话记录里全部都是2015的电话，日历里终于等了365天让你翻了一整页。最让我开心的就是离家更近了，不自然的开始想家，一年来大多数都是一个人，谈不上孤独但有时候难免自己会变得落寞，有时候几乎一天都不会说话。感受着从内心迸发出对自己的审视。这样很好，看清自己真的是一个好事，曾经保留着一份志气，今天依旧热血，我会一直让他翻腾。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;年后&lt;/strong&gt;&lt;br&gt;技术按照计划继续向前&lt;br&gt;书单上的书变成脑里的书单&lt;br&gt;股票，经济学，管理方面知识的积累&lt;br&gt;期望：一如既往的浪里小白龙&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/large/005PCOm1gw1f1m3ro2jvoj30e609et8r.jpg&quot; alt=&quot;enter image description here&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今年我结束了我的大三生活，也慢慢的在为准备踏入社会做准备，整个暑假都是处于长期的备战状态，让自己能够有一个良好的开始而努力着，其实可能就是希望自己能够有一份满意的工作，不要让自己对自己失望，在这一刻我想我还是没有做到，总结下来我失望了，没有达到自己想要的高度，一步步的蹒跚一
+    
+    </summary>
+    
+      <category term="成长记录" scheme="http://yoursite.com/categories/%E6%88%90%E9%95%BF%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="lang" scheme="http://yoursite.com/tags/lang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>元旦曲</title>
+    <link href="http://yoursite.com/2016/01/01/%E5%85%83%E6%97%A6%E6%9B%B2/"/>
+    <id>http://yoursite.com/2016/01/01/元旦曲/</id>
+    <published>2015-12-31T16:00:01.000Z</published>
+    <updated>2016-03-05T09:18:09.062Z</updated>
+    
+    <content type="html">&lt;p&gt;2016年元旦3天，开了一个不好的头，看了3天的电影，我自己也对自己的作为表示非常的意外，&lt;br&gt;1号晚上从同济大学去了一个老乡那里做菜吃，和同济的高才生把公交坐反了我很意外，不过菜好吃，小喝一点啤酒。&lt;/p&gt;
+&lt;p&gt;晚上回到房间，用3元人名币买了优酷的黄金会员，把罗辑思维长达4个小时的跨年演讲开了一遍，看到了1点多，收获颇多，老罗用它独具的思维特点给我们分析并且总结了2015年的互联网，我不是一个批斗派，并不是喜爱，但是他至少给我一个我们一般观察不到的视角，让我用他的眼光观察了去年的发展，当然也给了我们展望，相信2016年他会做得更好，其实最喜欢的是他分析小米和锤子科技中点和线中的连线关系，加上今年风投，资本的风云变幻，反正我是收获了，不然我能听完4个小时的演讲，当然有些肯定会不喜欢。&lt;/p&gt;
+&lt;p&gt;星期六，早上起得不是特别的早，好久没有睡懒觉了，10点钟起床，继续自己的疯狂的刷电影模式，天天向上1个小时看完了，无太多营养，当然我看的也有烂剧，名字就不说了，毫无逻辑，电影剪切专场无敌到爆，意外的是我看完了，泡沫嘛收获不会太多，自然也看看到了不错的电影，如寻龙决，风声。&lt;/p&gt;
+&lt;p&gt;今天，我去又睡懒觉了，哈哈，不想起，一处都不想去，早早的肚子就饿了，吃饭，回来和家里开开视频，睡了一个午觉，18点了，不得不说新年的日子里自己过得是格外的彪悍有志气，&lt;br&gt;不过还有一个小时元旦长假就要结束了.&lt;br&gt;反驳一下，其实开始我不是这么计划的，我想好好编程，好好看书，突然就看了那么的多的电影，看了就停不下来，大小看了6不部吧！还特地花钱买了一个优酷会员。&lt;/p&gt;
+&lt;p&gt;要说想吧！难免会不想，内心突然像是装了一个刺一样，在你注意力没有被集中的时候总会刺你一下。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2016年元旦3天，开了一个不好的头，看了3天的电影，我自己也对自己的作为表示非常的意外，&lt;br&gt;1号晚上从同济大学去了一个老乡那里做菜吃，和同济的高才生把公交坐反了我很意外，不过菜好吃，小喝一点啤酒。&lt;/p&gt;
+&lt;p&gt;晚上回到房间，用3元人名币买了优酷的黄金会员，把罗辑思维
+    
+    </summary>
+    
+      <category term="成长记录" scheme="http://yoursite.com/categories/%E6%88%90%E9%95%BF%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="lang" scheme="http://yoursite.com/tags/lang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开瓶器</title>
+    <link href="http://yoursite.com/2015/12/15/%E5%BC%80%E7%93%B6%E5%99%A8/"/>
+    <id>http://yoursite.com/2015/12/15/开瓶器/</id>
+    <published>2015-12-15T13:38:50.000Z</published>
+    <updated>2016-03-05T09:19:32.241Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;开瓶器&quot;&gt;&lt;a href=&quot;#开瓶器&quot; class=&quot;headerlink&quot; title=&quot;开瓶器&quot;&gt;&lt;/a&gt;开瓶器&lt;/h3&gt;&lt;p&gt;2015年12月15日21:01:05，這一时刻我手里的工作完成，索性操刀动斧送自己一个生日礼物！&lt;/p&gt;
+&lt;h3 id=&quot;动因&quot;&gt;&lt;a href=&quot;#动因&quot; class=&quot;headerlink&quot; title=&quot;动因&quot;&gt;&lt;/a&gt;动因&lt;/h3&gt;&lt;p&gt;突然就萌生了创建了一个博客的想法，以前就想过了，但是一直没有动手，为什呢？自己心里确实没有墨水，不知道分享些什么。 自己在自己也在博客园写过，在CSDN也写过，还在简书写过几篇，既然还是有一些人去关注我，但是自己一直不满意，都是乱写，一直觉得拿不出手，今天又为什么动手了呢？哈哈，觉得自己有东西能够分享了，毕竟今天的日子也不错。&lt;/p&gt;
+&lt;h3 id=&quot;感谢&quot;&gt;&lt;a href=&quot;#感谢&quot; class=&quot;headerlink&quot; title=&quot;感谢&quot;&gt;&lt;/a&gt;感谢&lt;/h3&gt;&lt;p&gt;生日对于我来说视乎我已经忘记了，今年自己改变了许多，应该是说幸运吧，有了一群朋友，生日好久没有收到礼物了，她送我了。呵呵！ 工作也很满意，压力总是会有的，但是自己一步步的的踏实的走下来，也不是那么难，我想更应该感谢给予我机会帮助我的几位的几个兄长们，还要感谢这一路陪我走来的兄弟，有人信服你真的是一件美好的事情。一词“感谢”，握于心中，激励自己！&lt;/p&gt;
+&lt;h3 id=&quot;展望&quot;&gt;&lt;a href=&quot;#展望&quot; class=&quot;headerlink&quot; title=&quot;展望&quot;&gt;&lt;/a&gt;展望&lt;/h3&gt;&lt;p&gt;2016的行程自己也计划得一半了，明年上半年应该会很忙，感觉奋斗才刚刚开始，以前感觉都是为了现在的马上储配一些装备而已，真正的攀登，现在次才刚刚开始。加油！&lt;/p&gt;
+&lt;h3 id=&quot;铂渊&quot;&gt;&lt;a href=&quot;#铂渊&quot; class=&quot;headerlink&quot; title=&quot;铂渊&quot;&gt;&lt;/a&gt;铂渊&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/005PCOm1gw1f1m3h1w7f0j30zk0qo7d1.jpg&quot; alt=&quot;enter image description here&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;开瓶器&quot;&gt;&lt;a href=&quot;#开瓶器&quot; class=&quot;headerlink&quot; title=&quot;开瓶器&quot;&gt;&lt;/a&gt;开瓶器&lt;/h3&gt;&lt;p&gt;2015年12月15日21:01:05，這一时刻我手里的工作完成，索性操刀动斧送自己一个生日礼物！&lt;/p&gt;
+&lt;h3 id=&quot;动因&quot;&gt;
+    
+    </summary>
+    
+      <category term="lang" scheme="http://yoursite.com/categories/lang/"/>
+    
+    
+      <category term="lang" scheme="http://yoursite.com/tags/lang/"/>
+    
+  </entry>
+  
+</feed>
