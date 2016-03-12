@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-09T02:34:00.809Z</updated>
+  <updated>2016-03-12T15:05:15.469Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我也有任性</title>
+    <link href="http://yoursite.com/2016/03/12/%E6%88%91%E4%B9%9F%E6%9C%89%E4%BB%BB%E6%80%A7/"/>
+    <id>http://yoursite.com/2016/03/12/我也有任性/</id>
+    <published>2016-03-12T15:04:14.000Z</published>
+    <updated>2016-03-12T15:05:15.469Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;论文记录&quot;&gt;&lt;a href=&quot;#论文记录&quot; class=&quot;headerlink&quot; title=&quot;论文记录&quot;&gt;&lt;/a&gt;论文记录&lt;/h3&gt;&lt;p&gt;做为一个大学生，最后的一道坎是什么呢？我想应该是论文吧，我也不列外，动手开始写论文了。感觉不是很好，翻看了国内的许多论文，很是难过，特别是硕士论文，不讨论水平如何，就他们研究的东西，我感觉几乎的落后几个时代的东西。我选择的是一个&lt;code&gt;Android&lt;/code&gt;移动客户端为题的设计论文。&lt;/p&gt;
+&lt;p&gt;一开始，并没有想着自己写，自己工作感觉有点忙，花时间在论文码那点无用的文字感觉时间分配不过来，所以决定和“众多”大学生一样，复制和粘贴完成现在的论文内容，算是交差算了，然后今天在动手的时候，看了一些论文，感觉用到的技术和项目功能点，都完全看不过去，想复制过来都不好意思，所以考虑一久，决定自己动手，全部自己写自己的论文，给大学一个完整的交代。&lt;/p&gt;
+&lt;h3 id=&quot;我要奔跑&quot;&gt;&lt;a href=&quot;#我要奔跑&quot; class=&quot;headerlink&quot; title=&quot;我要奔跑&quot;&gt;&lt;/a&gt;我要奔跑&lt;/h3&gt;&lt;p&gt;特别高兴的是这个星期见到了几个大学同学，星期4下午见了大学一个好兄弟，选择会贵州创业了，说实话我特别佩服他的勇气，他开始干的时候第一个打电话给我，可我刚找到工作，所以没有过去，庆幸的是他的公司运营的非常不错，听说今年公司准备买车了，到上海专车还特别来看看我，所以感到非常的欣慰，也受到了一些打击，感觉自己好像丢弃了一些事情，导致自己现在做的变得好像不属于自己的当初的所想，像是违背了自己的内心一样。星期六大学同班同学来找我了，一起吹吹牛，聊聊天，自己也格外开心，在上海朋友并不多，能够来几个陪我聊聊天我觉得挺好。&lt;/p&gt;
+&lt;p&gt;自己不断改变，不断的激励自己，不能让自己沉沦下去，不断的追求。 加油！&lt;br&gt;不为繁华改初心。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/005PCOm1gw1f1uh6ajueaj30lh0cumyh.jpg&quot; alt=&quot;enter image description here&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;论文记录&quot;&gt;&lt;a href=&quot;#论文记录&quot; class=&quot;headerlink&quot; title=&quot;论文记录&quot;&gt;&lt;/a&gt;论文记录&lt;/h3&gt;&lt;p&gt;做为一个大学生，最后的一道坎是什么呢？我想应该是论文吧，我也不列外，动手开始写论文了。感觉不是很好，翻看了国内的许多论文，很
+    
+    </summary>
+    
+      <category term="lang" scheme="http://yoursite.com/categories/lang/"/>
+    
+    
+      <category term="lang" scheme="http://yoursite.com/tags/lang/"/>
+    
+  </entry>
   
   <entry>
     <title>华为手机虚拟按键的监听</title>
