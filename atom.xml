@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-14T09:02:19.542Z</updated>
+  <updated>2016-03-14T09:08:23.934Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/03/14/%E5%A6%82%E7%8E%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%86%85%E5%BF%83-md/"/>
     <id>http://yoursite.com/2016/03/14/如现自己的内心-md/</id>
     <published>2016-03-14T08:59:05.000Z</published>
-    <updated>2016-03-14T09:02:19.542Z</updated>
+    <updated>2016-03-14T09:08:23.934Z</updated>
     
     <content type="html">&lt;h3 id=&quot;自己的内心&quot;&gt;&lt;a href=&quot;#自己的内心&quot; class=&quot;headerlink&quot; title=&quot;自己的内心&quot;&gt;&lt;/a&gt;自己的内心&lt;/h3&gt;&lt;p&gt;也许我忘记了许多。对于自己的认知，现在的我看来变得越来越重要，在我和几个朋友聊天中，他们一致认为我不够&lt;code&gt;自信&lt;/code&gt;了，我试着逃避或者反驳他们的观点时，竟然发现自己却无从下手，因为他们确实击溃了我的自信，迎面而来的是是直接指出了我的痛点，我想我不应该去为这些不存在的东西感到失落。我可以毫不畏惧的继续去做我想做的事情，可是现在的我再一次直面我的内心的时候，试着回答每一个问题时我是无比惭愧，通红的脸说。我试着用智人的心态罗列出问题。&lt;/p&gt;
 &lt;ol&gt;
@@ -38,7 +38,7 @@
 &lt;p&gt;做什么和做了什么的区别？并不是毫无追求的状态，至少能够明白明天要做什么，后面的工作是何等的着急？其实并没有，如同吃饭一样，并不一定要吃那么多，只是不断的挑战而已，说来说去只是在不同的状态中寻找一个自己觉得不错的感觉，要说利害，我想来觉得是“自作”。&lt;/p&gt;
 &lt;h3 id=&quot;寻求解决问题的办法&quot;&gt;&lt;a href=&quot;#寻求解决问题的办法&quot; class=&quot;headerlink&quot; title=&quot;寻求解决问题的办法&quot;&gt;&lt;/a&gt;寻求解决问题的办法&lt;/h3&gt;&lt;p&gt;漫长的学生生涯中，我遇到的最好的数学老师是高中时的刘传禹老师。他上课时讲过这样一段话，当面对一个数学问题，一要想的明白，二要算的准确，三要写的清楚。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;对于程序员来说，更本不需要担心奇怪的问题，奇怪本来就是解决问题的线索。&lt;/strong&gt;一度的恐惧只能拉高我们跨过问题的门槛，我们应该大胆的迎面解决问题，也许第一次你需要打10枪，下一次没准你打一枪就成了，经验面对&lt;code&gt;bug&lt;/code&gt;的态度，成就了你对一件事情自信把握程度。&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;st=&amp;gt;start: 分析&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;op=&amp;gt;operation: 分解&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;e=&amp;gt;end: 解决&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;st-&amp;gt;op&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;op-&amp;gt;e&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/005PCOm1gw1f1wi470ut9j30300c6glo.jpg&quot; alt=&quot;enter image description here  | | center&quot;&gt;&lt;/p&gt;
 &lt;p&gt;计算机编程所特有的思维（Thinking）就是程序员的” 内力 “，思维能力不济，功能再强大的编程语言也无用武之地。所以，我在这里特别强调程序员的思维艺术。&lt;/p&gt;
 &lt;p&gt;程序员的思维有一个专业术语，叫做计算思维（Computational Thinking）。计算思维是按照计算机科学的基本概念和方法，用来理解需求、设计系统、实现编程、解决问题的思维方法。&lt;/p&gt;
 &lt;h3 id=&quot;有所改变&quot;&gt;&lt;a href=&quot;#有所改变&quot; class=&quot;headerlink&quot; title=&quot;有所改变&quot;&gt;&lt;/a&gt;有所改变&lt;/h3&gt;&lt;p&gt;我应该试着去研究，细致的品味一个东西。&lt;/p&gt;
@@ -55,7 +55,7 @@
 &lt;p&gt;公司亦如&lt;strong&gt;产品&lt;/strong&gt;的厨房，拥有好的餐具，良好的环境，优秀的食材，才是烧制出美食根本，亦有再好的&lt;code&gt;人物&lt;/code&gt;配备，&lt;strong&gt;巧妇难为无米之炊&lt;/strong&gt;。谦卑去的观察学习。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&quot;演讲&quot;&gt;&lt;a href=&quot;#演讲&quot; class=&quot;headerlink&quot; title=&quot;演讲&quot;&gt;&lt;/a&gt;演讲&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;维持如上三个维度的身存，精神上的富足，根本还是需要物质和荣誉上的认可。在好的&lt;strong&gt;烧饼&lt;/strong&gt;都需要&lt;code&gt;吆喝&lt;/code&gt;。猪八戒卖&lt;strong&gt;烧饼&lt;/strong&gt;借嫦娥&lt;strong&gt;唇印&lt;/strong&gt;吹嘘，大声一股做气，一泄而空。保持良好的语言表达和行为艺术上的探讨。无冕最优。&lt;/p&gt;
+&lt;p&gt;维持如上三个维度的生存，精神上的富足，根本还是需要物质和荣誉上的认可。在好的&lt;strong&gt;烧饼&lt;/strong&gt;都需要&lt;code&gt;吆喝&lt;/code&gt;。猪八戒卖&lt;strong&gt;烧饼&lt;/strong&gt;借嫦娥&lt;strong&gt;唇印&lt;/strong&gt;吹嘘，大声一股做气，一泄而空。保持良好的语言表达和行为艺术上的探讨。无冕最优。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/large/005PCOm1gw1f1whtm937nj30g30aw0ta.jpg&quot; alt=&quot;enter image description here&quot;&gt;&lt;/p&gt;
 </content>
