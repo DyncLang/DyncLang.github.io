@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-01T17:24:06.693Z</updated>
+  <updated>2016-04-08T18:03:13.964Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>大学倒计时</title>
+    <link href="http://yoursite.com/2016/04/09/%E5%A4%A7%E5%AD%A6%E5%80%92%E8%AE%A1%E6%97%B6/"/>
+    <id>http://yoursite.com/2016/04/09/大学倒计时/</id>
+    <published>2016-04-08T18:01:28.000Z</published>
+    <updated>2016-04-08T18:03:13.964Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;大学倒计时&quot;&gt;&lt;a href=&quot;#大学倒计时&quot; class=&quot;headerlink&quot; title=&quot;大学倒计时&quot;&gt;&lt;/a&gt;大学倒计时&lt;/h3&gt;&lt;h4 id=&quot;论文&quot;&gt;&lt;a href=&quot;#论文&quot; class=&quot;headerlink&quot; title=&quot;论文&quot;&gt;&lt;/a&gt;论文&lt;/h4&gt;&lt;p&gt;说好自己要自己大学画上一个完美的句号.也算是完成了.长达30天的反复修改,虽然有些违背当初的诺言,但是可以肯定的说核心功能都是我自己设计,每一行代码每一个流程图都是自己使用专用的软件设计出来,个人认为比我所参考的任何一份沦为流程图都正规,&lt;br&gt;其中有许多的不足.构思的目录被导师推翻,自己设计的结构被导师要求修改,我觉得很多都没有必要反而加上去,比如反复的研究模块怎么设计,一些过时的设计技巧还是让我搞了上去非常的不爽.不过好的是我完成了这项任务,目前比较满意.明天再修改一下,查查重复.&lt;/p&gt;
+&lt;h4 id=&quot;工作&quot;&gt;&lt;a href=&quot;#工作&quot; class=&quot;headerlink&quot; title=&quot;工作&quot;&gt;&lt;/a&gt;工作&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;1.每天都在加班赶着项目&lt;br&gt;2.在&lt;code&gt;Android&lt;/code&gt;老大走了以后自己扛了下来,虽然有压力,虽然会迷茫,但是只要努力就能行;&lt;br&gt;3.工作难免会遇到困难,而且还有自己不能搞定的技术,经过&lt;code&gt;2星期&lt;/code&gt;的不断改进终于有了些脉络.&lt;br&gt;4.公司来了一个外国程序员;&lt;br&gt;5.每天加班到10点;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;最美盘州&quot;&gt;&lt;a href=&quot;#最美盘州&quot; class=&quot;headerlink&quot; title=&quot;最美盘州&quot;&gt;&lt;/a&gt;最美盘州&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;1.自己太忙,还是好像真的启动起来了.但是许多东西还在拖.&lt;br&gt;2.愧对大家,实在太忙,论文和工作挤兑在一起&lt;br&gt;3.马上论文完结,提手准备完成第一份&lt;code&gt;Web界面&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2016年4月9日01:55:39&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/005PCOm1gw1f2ptr1gc5pj318w0r1qok.jpg&quot; alt=&quot;enter image description here&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/large/005PCOm1gw1f2ptre44j6j318o0rah0o.jpg&quot; alt=&quot;enter image description here&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/005PCOm1gw1f2ptro1mb5j318v0qrkb1.jpg&quot; alt=&quot;enter image description here&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/005PCOm1gw1f2ptro1mb5j318v0qrkb1.jpg&quot; alt=&quot;enter image description here&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;大学倒计时&quot;&gt;&lt;a href=&quot;#大学倒计时&quot; class=&quot;headerlink&quot; title=&quot;大学倒计时&quot;&gt;&lt;/a&gt;大学倒计时&lt;/h3&gt;&lt;h4 id=&quot;论文&quot;&gt;&lt;a href=&quot;#论文&quot; class=&quot;headerlink&quot; title=&quot;论文&quot;&gt;&lt;/a&gt;论
+    
+    </summary>
+    
+      <category term="lang" scheme="http://yoursite.com/categories/lang/"/>
+    
+    
+      <category term="lang" scheme="http://yoursite.com/tags/lang/"/>
+    
+  </entry>
   
   <entry>
     <title>我也是一个少年</title>
@@ -45,8 +76,8 @@
   
   <entry>
     <title>如现自己的内心.md</title>
-    <link href="http://yoursite.com/2016/03/14/%E5%A6%82%E7%8E%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%86%85%E5%BF%83-md/"/>
-    <id>http://yoursite.com/2016/03/14/如现自己的内心-md/</id>
+    <link href="http://yoursite.com/2016/03/14/%E5%A6%82%E7%8E%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%86%85%E5%BF%83/"/>
+    <id>http://yoursite.com/2016/03/14/如现自己的内心/</id>
     <published>2016-03-14T08:59:05.000Z</published>
     <updated>2016-03-14T09:33:19.858Z</updated>
     
