@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-06-01T02:48:58.053Z</updated>
+  <updated>2016-06-07T08:13:10.559Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,78 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java基础个人理解(1)</title>
+    <link href="http://yoursite.com/2016/06/07/Java%E5%9F%BA%E7%A1%80%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3-1/"/>
+    <id>http://yoursite.com/2016/06/07/Java基础个人理解-1/</id>
+    <published>2016-06-07T08:10:51.000Z</published>
+    <updated>2016-06-07T08:13:10.559Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;java的由来&lt;/strong&gt;&lt;br&gt; java是由甲骨文公司开发的跨平台编程语言, 要运行java代码的首要条件就是需要安装JVM虚拟机,各个平台上的虚拟机是不一样额. 但是可以共用一套代码, 所以我们写的程序一次编写到处运行. &lt;/p&gt;
+&lt;p&gt;JVM其实就是调用不同系统的原生组件,实现java代码能够操作系统交互.&lt;br&gt;&lt;code&gt;JRE&lt;/code&gt; JAVA运行环境,内部包含JDK一些JAVA运行时所需要的类库;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;为什么要配置环境变量?&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;系统变量的配置方便我们调用,可以在&lt;code&gt;DOS&lt;/code&gt;环境下,直接使用&lt;code&gt;JDK&lt;/code&gt;bin目录下的工具,包括一些打包和编译工具&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;为什么要有数据类型?&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我的世界观中,任何程序都是围绕数据来展开的,也就是我们数学中的加减乘除. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;JAVA中有哪些数据类型?&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;8中基本数据类型. 数值型(byte,short,int ,long,double,float)&lt;br&gt;字符型(char),布尔型(boolar). 3个引用类型(string,inteface,char[]). 小数默认为&lt;code&gt;Double&lt;/code&gt;类型;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;为什么&lt;code&gt;char类型能够升为&lt;/code&gt;int`类型?&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;因为在计算机中所有字符都是一套特有的&lt;code&gt;ASIC&lt;/code&gt;码.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;为什么需要条件语句?&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Java&lt;/code&gt;和人类的思考是一样的,编程如思考一般,只有一定的条件判断才能达到我们选择的目的.如&lt;code&gt;if else&lt;/code&gt;. 有时候我们需要重复的做一些事情那么我们&lt;code&gt;for do while()&lt;/code&gt;语句就出现了. 加上一些条件控制那么就是我们写程序的基本架构了.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;冒泡和99&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;maopao&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[] num)&lt;/span&gt; &lt;/span&gt;{
+        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; num.length; i++) {
+            &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; j &amp;lt; num.length - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; j++) {
+                &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (num[j] &amp;gt; num[j + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]) {
+                    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; tem = num[j];
+                    num[j] = num[j + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;];
+                    num[j + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] = tem;
+                }
+            }
+        }
+
+&lt;span class=&quot;comment&quot;&gt;//99 乘法&lt;/span&gt;
+        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; i &amp;lt;= &lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;; i++) {
+            &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; j &amp;lt;= i; j++) {
+                System.out.print(i + &lt;span class=&quot;string&quot;&gt;&quot;*&quot;&lt;/span&gt; + j + &lt;span class=&quot;string&quot;&gt;&quot;=&quot;&lt;/span&gt; + i * j + &lt;span class=&quot;string&quot;&gt;&quot; | &quot;&lt;/span&gt;);
+            }
+            System.out.println();
+        }
+
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;静态变量和实例变量区别?&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;  类的成员变量有两种：一种是被static关键字修饰的变量，叫类变量或静态变量，一种是没有被static修饰的，叫做实例变量&lt;br&gt; 静态变量和实例变量的区别在于：&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/005PCOm1gw1f4mq1omjsuj30m60cqdgb.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/large/005PCOm1gw1f4mq3wl9jmj30oz0gowgq.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;java的由来&lt;/strong&gt;&lt;br&gt; java是由甲骨文公司开发的跨平台编程语言, 要运行java代码的首要条件就是需要安装JVM虚拟机,各个平台上的虚拟机是不一样额. 但是可以共用一套代码, 所以我们写的程序一次编写到处运行. &lt;/p&gt;
+&lt;p&gt;JVM其
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>我的互联网思维</title>

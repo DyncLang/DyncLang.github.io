@@ -246,6 +246,169 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/07/Java基础个人理解-1/" itemprop="url">
+                  Java基础个人理解(1)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-07T16:10:51+08:00" content="2016-06-07">
+              2016-06-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/07/Java基础个人理解-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/07/Java基础个人理解-1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>java的由来</strong><br> java是由甲骨文公司开发的跨平台编程语言, 要运行java代码的首要条件就是需要安装JVM虚拟机,各个平台上的虚拟机是不一样额. 但是可以共用一套代码, 所以我们写的程序一次编写到处运行. </p>
+<p>JVM其实就是调用不同系统的原生组件,实现java代码能够操作系统交互.<br><code>JRE</code> JAVA运行环境,内部包含JDK一些JAVA运行时所需要的类库;</p>
+<p><strong>为什么要配置环境变量?</strong></p>
+<blockquote>
+<p>系统变量的配置方便我们调用,可以在<code>DOS</code>环境下,直接使用<code>JDK</code>bin目录下的工具,包括一些打包和编译工具</p>
+</blockquote>
+<p><strong>为什么要有数据类型?</strong></p>
+<blockquote>
+<p>我的世界观中,任何程序都是围绕数据来展开的,也就是我们数学中的加减乘除. </p>
+</blockquote>
+<p><strong>JAVA中有哪些数据类型?</strong></p>
+<blockquote>
+<p>8中基本数据类型. 数值型(byte,short,int ,long,double,float)<br>字符型(char),布尔型(boolar). 3个引用类型(string,inteface,char[]). 小数默认为<code>Double</code>类型;</p>
+</blockquote>
+<p><strong>为什么<code>char类型能够升为</code>int`类型?</strong></p>
+<blockquote>
+<p>因为在计算机中所有字符都是一套特有的<code>ASIC</code>码.</p>
+</blockquote>
+<p><strong>为什么需要条件语句?</strong></p>
+<blockquote>
+<p><code>Java</code>和人类的思考是一样的,编程如思考一般,只有一定的条件判断才能达到我们选择的目的.如<code>if else</code>. 有时候我们需要重复的做一些事情那么我们<code>for do while()</code>语句就出现了. 加上一些条件控制那么就是我们写程序的基本架构了.</p>
+</blockquote>
+<p><strong>冒泡和99</strong></p>
+<pre><code class="java">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">maopao</span><span class="params">(<span class="keyword">int</span>[] num)</span> </span>{
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num.length; i++) {
+            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; num.length - <span class="number">1</span>; j++) {
+                <span class="keyword">if</span> (num[j] &gt; num[j + <span class="number">1</span>]) {
+                    <span class="keyword">int</span> tem = num[j];
+                    num[j] = num[j + <span class="number">1</span>];
+                    num[j + <span class="number">1</span>] = tem;
+                }
+            }
+        }
+
+<span class="comment">//99 乘法</span>
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">9</span>; i++) {
+            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++) {
+                System.out.print(i + <span class="string">"*"</span> + j + <span class="string">"="</span> + i * j + <span class="string">" | "</span>);
+            }
+            System.out.println();
+        }
+
+    }
+</code></pre>
+<p><strong>静态变量和实例变量区别?</strong></p>
+<blockquote>
+<p>  类的成员变量有两种：一种是被static关键字修饰的变量，叫类变量或静态变量，一种是没有被static修饰的，叫做实例变量<br> 静态变量和实例变量的区别在于：<br><img src="http://ww1.sinaimg.cn/large/005PCOm1gw1f4mq1omjsuj30m60cqdgb.jpg" alt="image"></p>
+</blockquote>
+<p><img src="http://ww4.sinaimg.cn/large/005PCOm1gw1f4mq3wl9jmj30oz0gowgq.jpg" alt="image"></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/01/我的互联网思维/" itemprop="url">
                   我的互联网思维
                 </a>
@@ -757,125 +920,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/12/我也有任性/" itemprop="url">
-                  我也有任性
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-12T23:04:14+08:00" content="2016-03-12">
-              2016-03-12
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/lang/" itemprop="url" rel="index">
-                    <span itemprop="name">lang</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/12/我也有任性/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/12/我也有任性/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="论文记录"><a href="#论文记录" class="headerlink" title="论文记录"></a>论文记录</h3><p>做为一个大学生，最后的一道坎是什么呢？我想应该是论文吧，我也不列外，动手开始写论文了。感觉不是很好，翻看了国内的许多论文，很是难过，特别是硕士论文，不讨论水平如何，就他们研究的东西，我感觉几乎的落后几个时代的东西。我选择的是一个<code>Android</code>移动客户端为题的设计论文。</p>
-<p>一开始，并没有想着自己写，自己工作感觉有点忙，花时间在论文码那点无用的文字感觉时间分配不过来，所以决定和“众多”大学生一样，复制和粘贴完成现在的论文内容，算是交差算了，然后今天在动手的时候，看了一些论文，感觉用到的技术和项目功能点，都完全看不过去，想复制过来都不好意思，所以考虑一久，决定自己动手，全部自己写自己的论文，给大学一个完整的交代。</p>
-<h3 id="我要奔跑"><a href="#我要奔跑" class="headerlink" title="我要奔跑"></a>我要奔跑</h3><p>特别高兴的是这个星期见到了几个大学同学，星期4下午见了大学一个好兄弟，选择会贵州创业了，说实话我特别佩服他的勇气，他开始干的时候第一个打电话给我，可我刚找到工作，所以没有过去，庆幸的是他的公司运营的非常不错，听说今年公司准备买车了，到上海专车还特别来看看我，所以感到非常的欣慰，也受到了一些打击，感觉自己好像丢弃了一些事情，导致自己现在做的变得好像不属于自己的当初的所想，像是违背了自己的内心一样。星期六大学同班同学来找我了，一起吹吹牛，聊聊天，自己也格外开心，在上海朋友并不多，能够来几个陪我聊聊天我觉得挺好。</p>
-<p>自己不断改变，不断的激励自己，不能让自己沉沦下去，不断的追求。 加油！<br>不为繁华改初心。</p>
-<p><img src="http://ww3.sinaimg.cn/large/005PCOm1gw1f1uh6ajueaj30lh0cumyh.jpg" alt="enter image description here"></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -922,7 +966,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -930,7 +974,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
