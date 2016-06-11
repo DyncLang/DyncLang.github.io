@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-06-07T08:13:10.559Z</updated>
+  <updated>2016-06-11T14:14:38.845Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title> java 自我思考-面向对象(2)</title>
+    <link href="http://yoursite.com/2016/06/11/java-%E8%87%AA%E6%88%91%E6%80%9D%E8%80%83-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-2/"/>
+    <id>http://yoursite.com/2016/06/11/java-自我思考-面向对象-2/</id>
+    <published>2016-06-11T14:09:13.000Z</published>
+    <updated>2016-06-11T14:14:38.845Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;1.数组存在的作用？&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;由于数据都是存储在内存中，而我们需要获取到数据的值（变量的值），数组被归纳为一种数据结构，方便我们对存储在内存中的数据操纵和获取。不然我们就只能通过地址去获取； &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;int[][] arr = new int[3][3]&lt;/code&gt;一个二维数组，是通过一个一维数组在管理一个二维数组，嵌套管理。&lt;br&gt;&lt;code&gt;arr&lt;/code&gt;值为&lt;code&gt;[[i@343ced&lt;/code&gt; ，一个&lt;code&gt;[&lt;/code&gt;代表一维数组，&lt;code&gt;[[&lt;/code&gt;代表二维数组，&lt;code&gt;@343cde&lt;/code&gt;实体的哈希值。&lt;br&gt;&lt;code&gt;arr[0]&lt;/code&gt;为&lt;code&gt;null&lt;/code&gt;，如果我们不给arr[0]初始化，那么在使用的时候会有&lt;code&gt;NullPinterException&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;为什么要分堆内存和栈内存?&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;堆和栈其实是一种数据结构, 堆类似树一样的数据结构,我的理解是分散排列的,&lt;code&gt;java&lt;/code&gt;通过&lt;code&gt;new 对象&lt;/code&gt;就是分配在堆中. 栈是一种先进后出的数据结构,我们程序需要运行,就需要读取内存,而我们的程序读取的就是栈内存当中的数据. 我们的基本数据类型是存储在栈内存中的,当然栈中也可以存储一份我们在堆中开辟内存对象的引用. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;一些混淆的关键字&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;static&lt;/code&gt;,静态关键子,让该代码块或者变量在类加载的时候加载;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;this&lt;/code&gt;:代表当前类的应用,使用一般是在局部变量和成员变量名相同的时候.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;super&lt;/code&gt;:在继承中用得比较多. A &lt;code&gt;extends&lt;/code&gt; B 类,A中构造函数会默认有一行&lt;code&gt;super()&lt;/code&gt;其实就是调用父类的构造函数. 如果我们自己修改了构造函数的参数如&lt;code&gt;super(1)&lt;/code&gt;那么就会调用父类中相应构造函数. 我们在&lt;code&gt;@overide&lt;/code&gt;复写父类函数的时候.可以通过&lt;code&gt;super&lt;/code&gt;来决定什么时候调用父类的方法.  这个关键字在我理解看来解决了我们在对&lt;strong&gt;继承&lt;/strong&gt;中父类中的方法什么时候调用或者不调用的弊端. 比如我们可以在父类定义一些方法.来控制逻辑; &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;fina&lt;/code&gt;:被修饰了类或者方法,变量其实就变成了一个常量,只能被初始化一次. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;多态的作用?&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;多态对于我来说, 我的理解增加了类的可复用性, 有时候我们需要定义一些接口,然后让其子类实现,  让后赋值给父类,那么父类就可以调用子类中的方法, &lt;strong&gt;注意:&lt;/strong&gt;在多态中子类的成员变量在运行的时候主要看 &lt;code&gt;=&lt;/code&gt; 左边的值,也就是真正持有该对象的成员变量的值;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/005PCOm1gw1f4rn5tjblfj30xc0m8jyn.jpg&quot; alt=&quot;enter image description here&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;1.数组存在的作用？&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;由于数据都是存储在内存中，而我们需要获取到数据的值（变量的值），数组被归纳为一种数据结构，方便我们对存储在内存中的数据操纵和获取。不然我们就只能通过地址去获取； &lt;/p&gt;
+&lt;p&gt;
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>Java基础个人理解(1)</title>
