@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-06-23T13:07:52.200Z</updated>
+  <updated>2016-07-02T14:08:23.521Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,64 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>思维方式心得</title>
+    <link href="http://yoursite.com/2016/07/02/%E6%80%9D%E7%BB%B4%E6%96%B9%E5%BC%8F%E5%BF%83%E5%BE%97/"/>
+    <id>http://yoursite.com/2016/07/02/思维方式心得/</id>
+    <published>2016-07-02T14:07:08.000Z</published>
+    <updated>2016-07-02T14:08:23.521Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;结构化思维-框架思维&quot;&gt;&lt;a href=&quot;#结构化思维-框架思维&quot; class=&quot;headerlink&quot; title=&quot;结构化思维-框架思维&quot;&gt;&lt;/a&gt;结构化思维-框架思维&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;在我们在解决问题 , 面临选择与人沟通的时候,能够找到一个结构, 把所有碎片化的信息放进去，这样可以大量减轻大脑的负担，让我更容易的解决问题，这就是我所认为的“结构化思维“&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;方法：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; 自上而下找结构：思考一个框架，然后将信息或者解决方案放在框架中；&lt;/p&gt;
+&lt;p&gt;自下而上归纳总结成结构：当你不清楚可以用什么框架的时候，四种方式把信息结构化；&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;头脑风暴（把想到的想法都罗列出来）&lt;/li&gt;
+&lt;li&gt;链接分组 （根据联线情况，我所理解的应该是细分，比如按照可行性，性格，危险性，回报率…….等进行分组）&lt;/li&gt;
+&lt;li&gt;按照结构提炼（细化链接分组中是否存在某种规律，在能够进一步划分，MECE（Eutually Exclusive, Collectively Exhaustive) 完全提炼就是我的框架；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;按照思维方式，列出常用平时的思维结构类型&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;二维矩阵类&lt;/strong&gt;：任务分析矩阵（紧急性、重要性）、波士顿矩阵（市占率、增长率）、安索夫矩阵（新/老产品、新/老市场）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;流程类&lt;/strong&gt;：产品价值链、客户生命周期&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;三要素类&lt;/strong&gt;：3C战略三角（Corporation公司, Customer顾客, Competition竞争对手）、爱情三元论（我之前文章里引用过）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;发散性思维&quot;&gt;&lt;a href=&quot;#发散性思维&quot; class=&quot;headerlink&quot; title=&quot;发散性思维&quot;&gt;&lt;/a&gt;发散性思维&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;能够从一个点出发，进行思维扩展，最终得到解决问题的许多方案，而不是唯一的方案，让自己的思维安装不同的方向进行扩展。&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/005PCOm1gw1f5fv2xd2uzj307g06q746.jpg&quot; alt=&quot;enter image description here&quot;&gt;&lt;/p&gt;
+&lt;p&gt;在自己平时的生活中，使用不是非常多，要想把思维方法化，本身就是一个伪命题，一方面强调需要我们跳出枷锁，一方面又要我以方法来思考方法；不过这对于我们在开始阶段是有很大帮助的。所以一个人的思维方式基本可以推到出此人的生活习惯我性格，&lt;strong&gt;发散性思维&lt;/strong&gt;的使用使得我们对事物的认知有了不一样的体会。&lt;/p&gt;
+&lt;p&gt;人遇到同样的问题的时候不同的人就会有不同的角度，我觉得这应该是多人容易创造出火花的原因，&lt;strong&gt;发散性思维&lt;/strong&gt;是我们创造力、想象力的根源，我发现人是否有趣其实也和&lt;strong&gt;发散性思维&lt;/strong&gt;有些关系，有趣的人天马行空，在生活中会多方面的去观察和思考。总会问“还有其他方法吗？” ， “还有其他可能吗？”&lt;/p&gt;
+&lt;p&gt;我在平时思考问题的时候不自然的会去多角度的分析切入，最终得到解决方案。比如在编程的时候，同样的界面和问题会有许多的解决方案，这样会有一个缺点，就是不让自己处于选择问题的过程中犹豫有时候分不清谁好谁坏。但是这样的思维在&lt;strong&gt;分析问题&lt;/strong&gt;的时候给了我许多的突破口，比如高中解题，出题者意图、每一个变量的作用、最坏的结果是、假设结果成立…..  现在体会下来其实就是所有所谓思维的综合体。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;好-坏 内-外，因-果，好-坏，前-后，简单-复杂，加速-减速。河流-泪水，天空-呼吸。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;逆向思维&quot;&gt;&lt;a href=&quot;#逆向思维&quot; class=&quot;headerlink&quot; title=&quot;逆向思维&quot;&gt;&lt;/a&gt;逆向思维&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;是一种因果转应得思维方式。由原因去分析结果，反之由结果去推到原因；&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在固有思维中我们更应该站在他人的角度去思考问题，有因才有果，学会逆向分析，灵活使用逆向分析。如逆向编程；&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;以后会重点去训练这样的思维。然后不断的壮实直自己；每天从睁开眼的前一秒就是开始面临多种问题和决定，计划只是成功的一部分，更需要合理的思维方式理性多角度干脆的去选择；&lt;/p&gt;
+&lt;p&gt;很多时候，托我们后踢的，不是所谓专业是否对口，而是我们的思维方式是否对路；&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xirvo.com1.z0.glb.clouddn.com/%E6%80%9D%E7%BB%B4%E6%96%B9%E5%BC%8F.png&quot; alt=&quot;背影-眼神&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;参考文章&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;从零开始做运营 – 张亮 ；&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzA4NTgyODUzNw==&amp;amp;mid=2649590700&amp;amp;idx=1&amp;amp;sn=4d131beb4a54f2eece26473e9fa43e44&amp;amp;scene=0#wechat_redirect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;咨询费1小时3千，他们的思维你学得会&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;结构化思维-框架思维&quot;&gt;&lt;a href=&quot;#结构化思维-框架思维&quot; class=&quot;headerlink&quot; title=&quot;结构化思维-框架思维&quot;&gt;&lt;/a&gt;结构化思维-框架思维&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;在我们在解决问题 , 面临选择与人沟通的时候,能够找到一个结
+    
+    </summary>
+    
+      <category term="lang" scheme="http://yoursite.com/categories/lang/"/>
+    
+    
+      <category term="思考" scheme="http://yoursite.com/tags/%E6%80%9D%E8%80%83/"/>
+    
+  </entry>
   
   <entry>
     <title>Teameeting简介</title>

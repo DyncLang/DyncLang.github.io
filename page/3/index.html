@@ -246,6 +246,128 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/09/Android数据库的使用/" itemprop="url">
+                  华为手机虚拟按键的监听
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-09T12:01:26+08:00" content="2016-03-09">
+              2016-03-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/09/Android数据库的使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/09/Android数据库的使用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近在做开发的时候发现监听华为手机<code>Meate</code>和<code>P</code>系列的手机底部都会有虚拟按键，这几天在做公司视屏通话界面的时候,展现对方像的同时还需要显示对方的音频打开或者关闭状态。在华为手机上面出现了虚拟键盘打开关闭出现图片错位的问题。最终解决方案如下。 </p>
+<ol>
+<li>自定义一个根布局<code>View</code>,继承<code>RelativeLayout</code>.</li>
+<li>虚拟键盘弹出会出现布局大小变化，即会回掉<code>onLayout()</code>实现给布局重新定位。</li>
+<li>添加自定义布局到根布局<code>xml</code>当中。</li>
+<li>实现布局虚拟键盘监听接口<code>onLayoutKeyChange</code></li>
+</ol>
+<p><strong>代码如下</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Created by xaio bailong on 2016/3/2.</span><br><span class="line"> */</span><br><span class="line">public class VitualKey extends RelativeLayout &#123;</span><br><span class="line"></span><br><span class="line">    private onLayoutKeyChange mLayoutKeyChange;</span><br><span class="line"></span><br><span class="line">    public VitualKey(Context context) &#123;</span><br><span class="line">        super(context);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public VitualKey(Context context, AttributeSet attrs) &#123;</span><br><span class="line">        super(context, attrs);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public VitualKey(Context context, AttributeSet attrs, int defStyleAttr) &#123;</span><br><span class="line">        super(context, attrs, defStyleAttr);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @param changed 布局发生改变 ture 没有改变False</span><br><span class="line">     * @param l</span><br><span class="line">     * @param t</span><br><span class="line">     * @param r</span><br><span class="line">     * @param b</span><br><span class="line">     */</span><br><span class="line">    @Override</span><br><span class="line">    protected void onLayout(boolean changed, int l, int t, int r, int b) &#123;</span><br><span class="line">        super.onLayout(changed, l, t, r, b);</span><br><span class="line">        //Log.e(&quot;onLayout&quot;, &quot;onLayout: b &quot;+b);</span><br><span class="line">        if (changed)</span><br><span class="line">            mLayoutKeyChange.onLayoutKeyChange(b);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public void setonLayoutKeyChange (onLayoutKeyChange layoutKeyChange) &#123;</span><br><span class="line">        mLayoutKeyChange = layoutKeyChange;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public interface onLayoutKeyChange &#123;</span><br><span class="line">        /**</span><br><span class="line">         * 虚拟键盘状态监听</span><br><span class="line">         *</span><br><span class="line">         * @param b 布局距离底部的布局</span><br><span class="line">         */</span><br><span class="line">        void onLayoutKeyChange(int b);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/08/华为手机虚拟按键的监听/" itemprop="url">
                   Android 数据库的使用.md
                 </a>
@@ -728,131 +850,12 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/12/15/开瓶器/" itemprop="url">
-                  开瓶器
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-15T21:38:50+08:00" content="2015-12-15">
-              2015-12-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/lang/" itemprop="url" rel="index">
-                    <span itemprop="name">lang</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/12/15/开瓶器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/15/开瓶器/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="开瓶器"><a href="#开瓶器" class="headerlink" title="开瓶器"></a>开瓶器</h3><p>2015年12月15日21:01:05，這一时刻我手里的工作完成，索性操刀动斧送自己一个生日礼物！</p>
-<h3 id="动因"><a href="#动因" class="headerlink" title="动因"></a>动因</h3><p>突然就萌生了创建了一个博客的想法，以前就想过了，但是一直没有动手，为什呢？自己心里确实没有墨水，不知道分享些什么。 自己在自己也在博客园写过，在CSDN也写过，还在简书写过几篇，既然还是有一些人去关注我，但是自己一直不满意，都是乱写，一直觉得拿不出手，今天又为什么动手了呢？哈哈，觉得自己有东西能够分享了，毕竟今天的日子也不错。</p>
-<h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><p>生日对于我来说视乎我已经忘记了，今年自己改变了许多，应该是说幸运吧，有了一群朋友，生日好久没有收到礼物了，她送我了。呵呵！ 工作也很满意，压力总是会有的，但是自己一步步的的踏实的走下来，也不是那么难，我想更应该感谢给予我机会帮助我的几位的几个兄长们，还要感谢这一路陪我走来的兄弟，有人信服你真的是一件美好的事情。一词“感谢”，握于心中，激励自己！</p>
-<h3 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h3><p>2016的行程自己也计划得一半了，明年上半年应该会很忙，感觉奋斗才刚刚开始，以前感觉都是为了现在的马上储配一些装备而已，真正的攀登，现在次才刚刚开始。加油！</p>
-<h3 id="铂渊"><a href="#铂渊" class="headerlink" title="铂渊"></a>铂渊</h3><p><img src="http://ww3.sinaimg.cn/large/005PCOm1gw1f1m3h1w7f0j30zk0qo7d1.jpg" alt="enter image description here"></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -893,7 +896,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -910,7 +913,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
