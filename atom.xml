@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-09T11:56:50.729Z</updated>
+  <updated>2016-08-11T01:59:05.904Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Diaalog源码学习</title>
+    <title>Dialog源码学习</title>
     <link href="http://yoursite.com/2016/08/09/Diaalog%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/"/>
     <id>http://yoursite.com/2016/08/09/Diaalog源码学习/</id>
     <published>2016-08-09T11:46:38.000Z</published>
-    <updated>2016-08-09T11:56:50.729Z</updated>
+    <updated>2016-08-11T01:59:05.904Z</updated>
     
     <content type="html">&lt;p&gt;恍然大悟，&lt;code&gt;Java&lt;/code&gt; &lt;strong&gt;万物皆是对象的真谛&lt;/strong&gt;，当然&lt;code&gt;Android&lt;/code&gt;也不列外，其实我们在写程序的时候也是在给写每一个对象； 所以我们在&lt;strong&gt;Android Studio&lt;/strong&gt;中所看到的Java源码也是一个个对象的封装体； &lt;/p&gt;
 &lt;p&gt;一时&lt;strong&gt;如蒙雷击&lt;/strong&gt;，我们看源码也是如此；&lt;/p&gt;
@@ -68,7 +68,7 @@
 &lt;p&gt;上面可以得出的结论&lt;code&gt;cancel()&lt;/code&gt;包含&lt;code&gt;dismiss（）&lt;/code&gt;。&lt;code&gt;cancel()&lt;/code&gt;会发送关闭的消息通知&lt;code&gt;ListenersHandler&lt;/code&gt;去回调相应的监听；&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Dialog&lt;/strong&gt;的源码大概就是如此了，其实仔细回想下来还是非常简单的，就是对源码的包装，&lt;code&gt;window&lt;/code&gt;的加载而已。难的是加载和显示的过程。这些我就不去深入研究了。&lt;br&gt;下一篇准备些&lt;code&gt;Dialog&lt;/code&gt;用到的设计模式；里面包含&lt;code&gt;message&lt;/code&gt;和&lt;code&gt;handle&lt;/code&gt;的用法，所以还是有许多可以学习的。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;推荐：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/yipianfengye/android-adDialog&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;一个不错开源对话框学习组件&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/yipianfengye/android-adDialog&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;一个不错的Dialog对话框开源项目&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
