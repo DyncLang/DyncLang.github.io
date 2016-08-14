@@ -1,0 +1,886 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="博客," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="浪里小白龙" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="恍然大悟，Java 万物皆是对象的真谛，当然Android也不列外，其实我们在写程序的时候也是在给写每一个对象； 所以我们在Android Studio中所看到的Java源码也是一个个对象的封装体； 
+一时如蒙雷击，我们看源码也是如此；
+
+带着问题进入
+如果是我写我该如何写？
+每一个方法是如何调用？
+
+即然如此我们便能无需太多的教学文档，就能驾驭Android中的基本用法。还能学到一些设计模式和一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dialog源码学习">
+<meta property="og:url" content="http://yoursite.com/2016/08/09/Diaalog源码学习/index.html">
+<meta property="og:site_name" content="浪里小白龙">
+<meta property="og:description" content="恍然大悟，Java 万物皆是对象的真谛，当然Android也不列外，其实我们在写程序的时候也是在给写每一个对象； 所以我们在Android Studio中所看到的Java源码也是一个个对象的封装体； 
+一时如蒙雷击，我们看源码也是如此；
+
+带着问题进入
+如果是我写我该如何写？
+每一个方法是如何调用？
+
+即然如此我们便能无需太多的教学文档，就能驾驭Android中的基本用法。还能学到一些设计模式和一">
+<meta property="og:image" content="http://7xirvo.com1.z0.glb.clouddn.com/%E7%B1%BB%E7%BB%93%E6%9E%84%E5%9B%BE.png">
+<meta property="og:image" content="http://ob9fygp8n.bkt.clouddn.com/1352736693_6736.jpg">
+<meta property="og:updated_time" content="2016-08-11T01:59:05.904Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dialog源码学习">
+<meta name="twitter:description" content="恍然大悟，Java 万物皆是对象的真谛，当然Android也不列外，其实我们在写程序的时候也是在给写每一个对象； 所以我们在Android Studio中所看到的Java源码也是一个个对象的封装体； 
+一时如蒙雷击，我们看源码也是如此；
+
+带着问题进入
+如果是我写我该如何写？
+每一个方法是如何调用？
+
+即然如此我们便能无需太多的教学文档，就能驾驭Android中的基本用法。还能学到一些设计模式和一">
+<meta name="twitter:image" content="http://7xirvo.com1.z0.glb.clouddn.com/%E7%B1%BB%E7%BB%93%E6%9E%84%E5%9B%BE.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Dialog源码学习 | 浪里小白龙 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">浪里小白龙</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">不为繁华易匠心</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Dialog源码学习
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-09T19:46:38+08:00" content="2016-08-09">
+              2016-08-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/09/Diaalog源码学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/09/Diaalog源码学习/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>恍然大悟，<code>Java</code> <strong>万物皆是对象的真谛</strong>，当然<code>Android</code>也不列外，其实我们在写程序的时候也是在给写每一个对象； 所以我们在<strong>Android Studio</strong>中所看到的Java源码也是一个个对象的封装体； </p>
+<p>一时<strong>如蒙雷击</strong>，我们看源码也是如此；</p>
+<ol>
+<li>带着问题进入</li>
+<li>如果是我写我该如何写？</li>
+<li>每一个方法是如何调用？</li>
+</ol>
+<p>即然如此我们便能无需太多的教学文档，就能驾驭<code>Android</code>中的基本用法。还能学到一些设计模式和一些写代码的技巧；</p>
+<p>这是我第一次看试着把自己看的东西写成博客。写得不好请观者见谅；</p>
+<p><strong>Dialog继承结构</strong><br><img src="http://7xirvo.com1.z0.glb.clouddn.com/%E7%B1%BB%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt="UML建模图"></p>
+<p><strong>创建</strong><br>创建 - 构造方法 - 重点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Dialog(@NonNull Context context, @StyleRes int themeResId, boolean createContextThemeWrapper) &#123;</span><br><span class="line">        if (createContextThemeWrapper) &#123;</span><br><span class="line">            if (themeResId == 0) &#123;</span><br><span class="line">                final TypedValue outValue = new TypedValue();</span><br><span class="line">                context.getTheme().resolveAttribute(R.attr.dialogTheme, outValue, true);</span><br><span class="line">                themeResId = outValue.resourceId;</span><br><span class="line">            &#125;</span><br><span class="line">            mContext = new ContextThemeWrapper(context, themeResId);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            mContext = context;</span><br><span class="line">        &#125;</span><br><span class="line">        //获取到窗口管理器</span><br><span class="line">        mWindowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);</span><br><span class="line"></span><br><span class="line">        // 构建显示时所用的Window；</span><br><span class="line">        final Window w = new PhoneWindow(mContext);</span><br><span class="line">        mWindow = w;</span><br><span class="line">        w.setCallback(this);</span><br><span class="line">        w.setOnWindowDismissedCallback(this);</span><br><span class="line">        w.setWindowManager(mWindowManager, null, null);</span><br><span class="line">        w.setGravity(Gravity.CENTER);</span><br><span class="line"></span><br><span class="line">        mListenersHandler = new ListenersHandler(this);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>解说一下重要的代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// 1.获取Window管理器</span></span><br><span class="line"> mWindowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);</span><br><span class="line"> <span class="comment">//2.创建一个 Windows 来供 Dialog 挂载布局</span></span><br><span class="line"> <span class="keyword">final</span> Window w = <span class="keyword">new</span> PhoneWindow(mContext);</span><br><span class="line"><span class="comment">// 3.设置Window和 窗口管理器关联</span></span><br><span class="line">w.setWindowManager(mWindowManager, <span class="keyword">null</span>, <span class="keyword">null</span>);</span><br><span class="line"><span class="comment">// 4.</span></span><br><span class="line">mListenersHandler = <span class="keyword">new</span> ListenersHandler(<span class="keyword">this</span>);</span><br></pre></td></tr></table></figure>
+<p>只要简单的3步就完成了<code>Dialog</code>和布局所显示的关联。<br><code>WindowManager</code>是用来干什么的呢？<br>其实和我们的<code>Activity</code>一样，我们需要写<code>XML</code>布局，然后通过<code>LayoutInflater</code>转化为<code>View</code>设置给<code>Acvitity</code>是一样的。我们都需要一个显示的窗口；在<code>Android</code>里面就叫<code>window</code>; </p>
+<p>简单来说Window是抽象类，具体实现是PhoneWindow，通过WindowManager就可以创建Window。WindowManager是外界访问Window的入口，但是Window的具体实现是在WindowManagerService中，WindowManager和WindowManagerService的交互是一个IPC过程。所有的视图例如Activity、Dialog、Toast都是附加在Window上的。</p>
+<p><code>Window w = new PhoneWindow(mContext);</code><br>具体关系如下图：<br><img src="http://ob9fygp8n.bkt.clouddn.com/1352736693_6736.jpg" alt="Window图"></p>
+<p>需要深入了解<code>Window</code>可以看老罗文章：<br><a href="http://blog.csdn.net/luoshengyang/article/details/8223770" target="_blank" rel="external"> Android应用程序窗口（Activity）的窗口对象（Window）的创建过程分析</a></p>
+<p><strong>显示</strong></p>
+<p>在写码的时候发现一个问题，我自己<code>继承</code>写了一个<code>dialog</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MyDialog dialog = <span class="keyword">new</span> MyDialog(context, R.style.default_dialog_style);</span><br></pre></td></tr></table></figure>
+<p>为什么不会调用生命周期中的<code>OnCreate()</code>方法？一直以为在构建的时候就应该创建。后来才发现自己理解错误，要调用<code>show()</code>方法才会显示。如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">       <span class="comment">// 1.判断是否显示</span></span><br><span class="line">  </span><br><span class="line">    ··· 部分代码</span><br><span class="line"></span><br><span class="line">       mCanceled = <span class="keyword">false</span>;  </span><br><span class="line">       <span class="comment">// 2.调用OnCreate(); </span></span><br><span class="line">       <span class="keyword">if</span> (!mCreated) &#123;</span><br><span class="line">           dispatchOnCreate(<span class="keyword">null</span>);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">// 3.启动</span></span><br><span class="line">       onStart();</span><br><span class="line">      <span class="comment">// 4. 获取到Window跟布局</span></span><br><span class="line">       mDecor = mWindow.getDecorView();</span><br><span class="line">       <span class="keyword">if</span> (mActionBar == <span class="keyword">null</span> &amp;&amp; mWindow.hasFeature(Window.FEATURE_ACTION_BAR)) &#123;</span><br><span class="line">           <span class="keyword">final</span> ApplicationInfo info = mContext.getApplicationInfo();</span><br><span class="line">           mWindow.setDefaultIcon(info.icon);</span><br><span class="line">           mWindow.setDefaultLogo(info.logo);</span><br><span class="line">           mActionBar = <span class="keyword">new</span> WindowDecorActionBar(<span class="keyword">this</span>);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">	··· 部分代码 -- 设置布局参数</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 5. 添加 布局到 布局管理器 中 </span></span><br><span class="line">           mWindowManager.addView(mDecor, l);</span><br><span class="line">           mShowing = <span class="keyword">true</span>;</span><br><span class="line">	    <span class="comment">// 调用 show()示监听回调</span></span><br><span class="line">           sendShowMessage();</span><br><span class="line">       &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到第2条中如果如果 <code>mCreated=false</code>才会回调<code>dispatchOnCreate（）</code>继续深入：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">dispatchOnCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!mCreated) &#123;</span><br><span class="line">            onCreate(savedInstanceState);</span><br><span class="line">            mCreated = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 空实现</span></span><br><span class="line"> <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>由上代码可以看到<code>onCreate</code>是空实现，我们在自己定义<code>Dialog</code>时复写<code>onCreate()</code>才会有实际的作用；</p>
+<p>接着看<code>OnStart()</code>; 也无太多实际作用。设置显示<code>mActionBar</code>动画；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Called when the dialog is starting.</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onStart</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (mActionBar != <span class="keyword">null</span>) mActionBar.setShowHideAnimationEnabled(<span class="keyword">true</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么我们是在哪里设置布局的?  如下；布局是设置在<code>mWindow</code>中的；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setContentView</span><span class="params">(@LayoutRes <span class="keyword">int</span> layoutResID)</span> </span>&#123;</span><br><span class="line">    mWindow.setContentView(layoutResID);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一般我们是复写在<code>OnCreat()</code>中。或者直接<code>dialog.setContentView(R.layout.layout_view)</code>来设置布局；<br>接着把拿到<code>mDecor</code>设置个布局管理器中。就是源码中的<strong>第5条</strong>。那么我们写得布局就显示在我们的程序上面了。<strong>由于我们直接加载<code>window</code>上</strong>。因而我们可以直接显示在所以布局的顶部；</p>
+<p>####<strong>关闭对话框</strong></p>
+<p>所有对话框都实现了一个接口 <code>DialogInterface</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">DialogInterface</span></span>&#123;</span><br><span class="line"></span><br><span class="line">... 省略 ...</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cancel</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dismiss</span><span class="params">()</span></span>;</span><br><span class="line">    </span><br><span class="line">... 省略 ...</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>Dialog</code>中还有一个方法<code>hide()</code>；所以让一个对话框消失有<strong>三种</strong>方法；我们来看看有什么不同：</p>
+<p> <strong>hide()</strong> —- 只是让布局看不到，但是没有关闭它；并<strong>没有移除屏幕</strong>；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hide</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (mDecor != <span class="keyword">null</span>) &#123;</span><br><span class="line">        mDecor.setVisibility(View.GONE);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>dismiss</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dismiss</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 判断是否在同一线程 </span></span><br><span class="line">        <span class="keyword">if</span> (Looper.myLooper() == mHandler.getLooper()) &#123;</span><br><span class="line">            dismissDialog();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//不在同一线程。发送关闭的mHandler来关闭对话框</span></span><br><span class="line">            mHandler.post(mDismissAction);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 销毁对话框</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">dismissDialog</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mDecor == <span class="keyword">null</span> || !mShowing) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (mWindow.isDestroyed()) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 1. 移除 WindowManger 中 Decor</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            mWindowManager.removeViewImmediate(mDecor);</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="comment">//2. 销毁必要组件， </span></span><br><span class="line">            <span class="keyword">if</span> (mActionMode != <span class="keyword">null</span>) &#123;</span><br><span class="line">                mActionMode.finish();</span><br><span class="line">            &#125;</span><br><span class="line">            mDecor = <span class="keyword">null</span>;</span><br><span class="line">            mWindow.closeAllPanels();</span><br><span class="line">            <span class="comment">//3. 回调 onStop方法</span></span><br><span class="line">            onStop();</span><br><span class="line">            mShowing = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 4. 发送 销毁 通知的监听 最后介绍：</span></span><br><span class="line">            sendDismissMessage();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>：官方文档上同时提到了一点注意事项：如果你要进行一些清理工作的话，不要在重写dismiss函数，而应该在onStop函数中进行这些清理工作</p>
+<p>####<strong>cancel 和  dismiss 区别</strong><br>这样看下来。除了<code>hide()</code>和其他两个方法有点区别，其他两个好像就没有太大区别了：先说结论吧：<br><strong>Hide()</strong>只是隐藏对话框；<strong>dismiss()</strong>就是关闭并结束对话框的方法；<br><strong>cancel()</strong>如果没有设置<code>setOnCancelListener（）</code>才会和<strong>dismiss()</strong>有所不同；<br>在<code>Dialog</code>内部有这样一段代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 设置打开关闭监听</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">ListenersHandler</span> <span class="keyword">extends</span> <span class="title">Handler</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> WeakReference&lt;DialogInterface&gt; mDialog;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">ListenersHandler</span><span class="params">(Dialog dialog)</span> </span>&#123;</span><br><span class="line">            mDialog = <span class="keyword">new</span> WeakReference&lt;DialogInterface&gt;(dialog);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">switch</span> (msg.what) &#123;</span><br><span class="line">                <span class="keyword">case</span> DISMISS:</span><br><span class="line">                    ((OnDismissListener) msg.obj).onDismiss(mDialog.get());</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> CANCEL:</span><br><span class="line">                    ((OnCancelListener) msg.obj).onCancel(mDialog.get());</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> SHOW:</span><br><span class="line">                    ((OnShowListener) msg.obj).onShow(mDialog.get());</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">如上代码所理解，如果你在使用`Dialog`设置了相应的回调监听，会回调相应的监听方法；</span><br><span class="line">我们在来看看`cancel`方法：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">``` <span class="function">java</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cancel</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!mCanceled &amp;&amp; mCancelMessage != <span class="keyword">null</span>) &#123;</span><br><span class="line">            mCanceled = <span class="keyword">true</span>;</span><br><span class="line">            <span class="comment">// Obtain a new message so this dialog can be re-used</span></span><br><span class="line">            Message.obtain(mCancelMessage).sendToTarget();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//回调dismis方法； </span></span><br><span class="line">        dismiss();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>如果你设置了回调监听<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOnCancelListener</span><span class="params">(<span class="keyword">final</span> OnCancelListener listener)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>上面可以得出的结论<code>cancel()</code>包含<code>dismiss（）</code>。<code>cancel()</code>会发送关闭的消息通知<code>ListenersHandler</code>去回调相应的监听；</p>
+<p><strong>Dialog</strong>的源码大概就是如此了，其实仔细回想下来还是非常简单的，就是对源码的包装，<code>window</code>的加载而已。难的是加载和显示的过程。这些我就不去深入研究了。<br>下一篇准备些<code>Dialog</code>用到的设计模式；里面包含<code>message</code>和<code>handle</code>的用法，所以还是有许多可以学习的。</p>
+<p><strong>推荐：</strong></p>
+<p><a href="https://github.com/yipianfengye/android-adDialog" target="_blank" rel="external">一个不错的Dialog对话框开源项目</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/博客/" rel="tag">#博客</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/25/思维方式心得-二/" rel="next" title="思维方式心得(二)">
+                <i class="fa fa-chevron-left"></i> 思维方式心得(二)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/14/7月是是阳光灿烂的日子/" rel="prev" title="7月是是阳光灿烂的日子">
+                7月是是阳光灿烂的日子 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/08/09/Diaalog源码学习/"
+     data-title="Dialog源码学习"
+     data-content=""
+     data-url="http://yoursite.com/2016/08/09/Diaalog源码学习/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/08/09/Diaalog源码学习/"
+           data-title="Dialog源码学习" data-url="http://yoursite.com/2016/08/09/Diaalog源码学习/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/auther.jpg"
+               alt="lang" />
+          <p class="site-author-name" itemprop="name">lang</p>
+          <p class="site-description motion-element" itemprop="description">小白龙</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/DyncLang" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> github
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5343507325/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/xiaobl" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> zhihu
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://luxiaoyou.com/" target="_blank">Xiaoyou Lu</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.wangsong520.com" target="_blank">Wang Song</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lang</span>
+</div>
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"xiaobailong"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+  
+
+
+</body>
+</html>
